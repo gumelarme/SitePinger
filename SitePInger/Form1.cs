@@ -9,6 +9,22 @@ namespace SitePInger
     public partial class Form1 : Form
     {
         PingMachine pinger;
+        private string[] defaultSite = new string[]
+        {
+            "vultr.com",
+            "digitalocean.com",
+            "bluehost.com",
+            "domainesia.com",
+            "hostinger.com",
+            "45.127.133.52",
+            "207.246.107.236",
+            "45.32.100.168", //Singapore
+            "108.61.201.151", //Tokyo
+            "108.61.212.117", //Sydney
+            "149.248.50.81", //Toronto
+            "104.156.230.107", //Silicon Valley
+        };
+
         public Form1()
         {
             InitializeComponent();
@@ -38,6 +54,8 @@ namespace SitePInger
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtIPAddress.Text = string.Join(Environment.NewLine, defaultSite);
+            this.Icon = ResourceIcon.pingpong_vW5_icon;
         }
 
         private void BtnStartPing_Click(object sender, EventArgs e)
@@ -61,6 +79,11 @@ namespace SitePInger
                 if (save.ShowDialog() != DialogResult.OK) return;
                 File.WriteAllText(save.FileName, txtResponse.Text);
             }
+        }
+
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

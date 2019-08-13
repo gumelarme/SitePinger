@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtIPAddress = new System.Windows.Forms.TextBox();
             this.txtResponse = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnStartPing = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnStartPing = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,17 +80,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(635, 373);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // btnStartPing
-            // 
-            this.btnStartPing.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnStartPing.Location = new System.Drawing.Point(7, 334);
-            this.btnStartPing.Name = "btnStartPing";
-            this.btnStartPing.Size = new System.Drawing.Size(144, 32);
-            this.btnStartPing.TabIndex = 1;
-            this.btnStartPing.Text = "Ping";
-            this.btnStartPing.UseVisualStyleBackColor = true;
-            this.btnStartPing.Click += new System.EventHandler(this.BtnStartPing_Click);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -97,17 +87,18 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel2.Controls.Add(this.btnSave, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.progressBar, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(157, 334);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(468, 32);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 32);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // btnSave
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnSave.Location = new System.Drawing.Point(381, 3);
+            this.btnSave.Location = new System.Drawing.Point(384, 3);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(84, 26);
             this.btnSave.TabIndex = 0;
@@ -120,8 +111,19 @@
             this.progressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar.Location = new System.Drawing.Point(3, 3);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(372, 26);
+            this.progressBar.Size = new System.Drawing.Size(375, 26);
             this.progressBar.TabIndex = 1;
+            // 
+            // btnStartPing
+            // 
+            this.btnStartPing.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStartPing.Location = new System.Drawing.Point(7, 334);
+            this.btnStartPing.Name = "btnStartPing";
+            this.btnStartPing.Size = new System.Drawing.Size(144, 32);
+            this.btnStartPing.TabIndex = 1;
+            this.btnStartPing.Text = "Ping";
+            this.btnStartPing.UseVisualStyleBackColor = true;
+            this.btnStartPing.Click += new System.EventHandler(this.BtnStartPing_Click);
             // 
             // Form1
             // 
@@ -129,6 +131,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 373);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Ping the Shit Out of It";
             this.Load += new System.EventHandler(this.Form1_Load);
